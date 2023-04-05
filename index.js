@@ -15,14 +15,14 @@ const passport = require("passport");
 var LocalStrategy = require('passport-local');
 
 const dbUrl = process.env.DB_URI
-
+const urt = 'mongodb+srv://shanemaster007:12345678s@cluster0.hpiduij.mongodb.net/?retryWrites=true&w=majority';
 
 const port = process.env.PORT || 8080
 
 const sessionSecret = process.env.SESSION_SECRET || 'this is a secret session'
 
 //Connect to DB
-mongoose.connect(dbUrl, { useNewUrlParser: true,useUnifiedTopology: true })
+mongoose.connect(urt, { useNewUrlParser: true,useUnifiedTopology: true })
 .then(()=> console.log(" DB CONNECTED!"))
 .catch((err)=> console.log(err));
 
